@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace PetCollection.DataAccess
+﻿namespace PetCollection.DataAccess
 {
     public class Class1
     {
