@@ -28,9 +28,9 @@ namespace PetCollection.Controllers
 
         // GET api/<OwnersController>/5
         [HttpGet("id")]
-        public async Task<Owner> Get([FromBody] string id)
+        public async Task<Owner> Get([FromBody] Owner owner)
         {
-            return await _ownerRepository.GetById(id);
+            return await _ownerRepository.GetById(owner.Id);
         }
 
         // POST api/<OwnersController>
@@ -49,9 +49,9 @@ namespace PetCollection.Controllers
 
         // DELETE api/<OwnersController>/5
         [HttpDelete]
-        public async Task<bool> Delete([FromBody] string id)
+        public async Task<bool> Delete([FromBody] Owner owner)
         {
-            return await _ownerRepository.Delete(id);
+            return await _ownerRepository.Delete(owner.Id);
         }
     }
 }

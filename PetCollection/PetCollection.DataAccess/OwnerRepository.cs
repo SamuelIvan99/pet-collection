@@ -36,7 +36,7 @@ namespace PetCollection.DataAccess
 
         public async Task<bool> Update(Owner data)
         {
-            string sql = "update Owners(FirstName, LastName, Email) values (@FirstName, @LastName, @Email) where Id = @Id";
+            string sql = "update Owners(FirstName, LastName, Email) where Id = @Id";
 
             return await DataAccess<Owner>.SaveData(sql, data);
         }
