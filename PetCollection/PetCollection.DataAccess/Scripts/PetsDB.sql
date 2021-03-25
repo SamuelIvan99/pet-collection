@@ -15,14 +15,14 @@ CREATE TABLE [OwnerPet] (
 )
 GO
 
-CREATE TABLE [Pet] (
+CREATE TABLE [Pets] (
   [Id] nvarchar(255) PRIMARY KEY,
   [Name] nvarchar(255),
   [Breed] nvarchar(255),
   [Birth] datetime NOT NULL,
   [FeededNo] int DEFAULT 0,
   [TrainingDegree] int DEFAULT 1,
-  [AdultHeight] int NOT NULL,
+  [AdultHeight] int,
   [AdultLength] int,
   [CatchesMice] bit DEFAULT 0
 )
@@ -31,5 +31,5 @@ GO
 ALTER TABLE [OwnerPet] ADD FOREIGN KEY ([OwnerId]) REFERENCES [Owners] ([Id])
 GO
 
-ALTER TABLE [OwnerPet] ADD FOREIGN KEY ([PetId]) REFERENCES [Pet] ([Id])
+ALTER TABLE [OwnerPet] ADD FOREIGN KEY ([PetId]) REFERENCES [Pets] ([Id])
 GO

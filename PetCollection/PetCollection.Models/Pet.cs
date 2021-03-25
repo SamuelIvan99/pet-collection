@@ -4,14 +4,14 @@ namespace PetCollection.Models
 {
     public abstract class Pet
     {
-        public string Id { get; set; }
+        protected string Id { get; set; }
 
-        public string Name { get; set; }
+        protected string Name { get; set; }
 
-        public string Breed { get; set; }
+        protected string Breed { get; set; }
 
-        public DateTime Birth { get; set; }
+        protected DateTime Birth { get; set; }
 
-        public int FeededNo { get; set; }
+        protected int FeededNo { get; set; }
     }
 }
