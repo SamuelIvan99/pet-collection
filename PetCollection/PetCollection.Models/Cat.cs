@@ -3,5 +3,7 @@
     public class Cat : Pet
     {
         public bool CatchesMice { get; set; }
+
+        public int AdultLength { get; set; }
     }
 }

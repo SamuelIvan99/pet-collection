@@ -7,6 +7,6 @@ namespace PetCollection.Models
         [Range(1, 10)]
         public int TrainingDegree { get; set; }
 
-        public int Height { get; set; }
+        public int AdultHeight { get; set; }
     }
 }
