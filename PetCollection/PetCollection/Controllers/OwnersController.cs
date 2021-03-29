@@ -44,7 +44,15 @@ namespace PetCollection.Controllers
         [HttpPut]
         public async Task<bool> Put([FromBody] Owner owner)
         {
-            return await _ownerRepository.Update(owner);
+            Owner updatedOwner = await _ownerRepository.GetById(owner.Id);
+            if (owner.FirstName != null)
+                updatedOwner.FirstName = owner.FirstName;
+            if (owner.LastName != null)
+                updatedOwner.LastName = owner.LastName;
+            if (owner.Email != null)
+                updatedOwner.Email = owner.Email;
+
+            return await _ownerRepository.Update(updatedOwner);
         }
 
         // DELETE api/<OwnersController>/5
