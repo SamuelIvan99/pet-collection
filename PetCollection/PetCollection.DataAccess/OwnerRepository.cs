@@ -2,24 +2,25 @@
 using PetCollection.Models;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace PetCollection.DataAccess
 {
     public class OwnerRepository : IOwnerRepository
     {
-        public async Task<bool> Insert(Owner owner)
+        public async Task<bool> Insert(Owner data)
         {
-            Owner data = new Owner
+            Owner owner = new Owner
             {
                 Id = Guid.NewGuid().ToString(),
-                FirstName = owner.FirstName,
-                LastName = owner.LastName,
-                Email = owner.Email
+                FirstName = data.FirstName,
+                LastName = data.LastName,
+                Email = data.Email
             };
             string sql = "insert into Owners(Id, FirstName, LastName, Email) values (@Id, @FirstName, @LastName, @Email)";
 
-            return await DataAccess<Owner>.SaveData(sql, data);
+            return await DataAccess<Owner>.SaveData(sql, owner);
         }
 
         public async Task<IEnumerable<Owner>> GetAll()
@@ -31,7 +32,7 @@ namespace PetCollection.DataAccess
         public async Task<Owner> GetById(string id)
         {
             string sql = "select * from Owners where Id = @Id";
-            return await DataAccess<Owner>.LoadData(sql, new { Id = id });
+            return (await DataAccess<Owner>.LoadData(sql, new { Id = id })).SingleOrDefault();
         }
 
         public async Task<bool> Update(Owner data)

@@ -3,7 +3,6 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace PetCollection.DataAccess
@@ -29,13 +28,13 @@ namespace PetCollection.DataAccess
 
         }
 
-        public async static Task<T> LoadData<S>(string sql, S id)
+        public async static Task<IEnumerable<T>> LoadData<S>(string sql, S id)
         {
             using (IDbConnection conn = new SqlConnection(ConnectionString))
             {
                 try
                 {
-                    var result = (await conn.QueryAsync<T>(sql, id)).SingleOrDefault(); ;
+                    var result = await conn.QueryAsync<T>(sql, id);
                     return result;
                 }
                 catch (Exception e)
