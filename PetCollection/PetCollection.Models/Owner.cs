@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace PetCollection.Models
+﻿namespace PetCollection.Models
 {
     public class Owner
     {
@@ -12,6 +10,6 @@ namespace PetCollection.Models
 
         public string Email { get; set; }
 
-        public IEnumerable<Pet> Pets { get; set; }
+        //public IEnumerable<Pet> Pets { get; set; }
     }
 }

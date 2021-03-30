@@ -43,7 +43,7 @@ namespace PetCollection.DataAccess
                 AdultLength = data.AdultLength,
                 CatchesMice = data.CatchesMice
             };
-            string sql = "insert into Pets(Name, Breed, Birth, FeededNo, AdultLength, CatchesMice, PetType) values (@Name, @Breed, @Birth, @FeededNo, @AdultLength, @CatchesMice, 'Cat')";
+            string sql = "insert into Pets(Id, Name, Breed, Birth, FeededNo, AdultLength, CatchesMice, PetType) values (@Id, @Name, @Breed, @Birth, @FeededNo, @AdultLength, @CatchesMice, 'Cat')";
 
             return await DataAccess<Cat>.SaveData(sql, cat);
         }

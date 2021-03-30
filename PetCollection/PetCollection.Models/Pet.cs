@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 
 namespace PetCollection.Models
 {
@@ -15,6 +14,6 @@ namespace PetCollection.Models
 
         public int FeededNo { get; set; }
 
-        public IEnumerable<Owner> Owners { get; set; }
+        //public IEnumerable<Owner> Owners { get; set; }
     }
 }

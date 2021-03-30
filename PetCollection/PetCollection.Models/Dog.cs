@@ -1,10 +1,8 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace PetCollection.Models
+﻿namespace PetCollection.Models
 {
     public class Dog : Pet
     {
-        [Range(1, 10)]
+        //[Range(1, 10)]
         public int TrainingDegree { get; set; }
 
         public int AdultHeight { get; set; }

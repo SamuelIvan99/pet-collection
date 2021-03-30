@@ -25,6 +25,7 @@ namespace PetCollection
             services.AddScoped<IOwnerRepository, OwnerRepository>();
             services.AddScoped<IDogRepository, DogRepository>();
             services.AddScoped<ICatRepository, CatRepository>();
+            services.AddScoped<IOwnerPetRepository, OwnerPetRepository>();
 
             services.AddControllersWithViews();
 
